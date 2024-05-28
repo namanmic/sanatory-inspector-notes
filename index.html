@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanitary Inspector Notes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        }
+
+        /* Cloud Effect */
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/clouds.png');
+            z-index: -1;
+            opacity: 0.4;
+            animation: cloudAnimation 60s linear infinite;
+        }
+
+        @keyframes cloudAnimation {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 0%; }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1000px;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .navbar a {
+            color: #333; /* Adjusted text color */
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #4CAF50;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333; /* Adjusted text color */
+        }
+
+        .home-content, .notes {
+            display: none;
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; /* Added spacing between book tiles */
+            padding: 20px; /* Added padding to the grid container */
+        }
+
+        .note-tile {
+            background: rgba(0, 0, 0, 0.2); /* Adjusted tile background color */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-tile:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1); /* Adjusted tile hover background color */
+            backdrop-filter: blur(5px);
+            z-index: -1;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+
+        .note-tile:hover:before {
+            opacity: 1;
+        }
+
+        .note-tile a {
+            color: #fff; /* Adjusted text color */
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .note-tile:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 0, 0, 0.3); /* Adjusted tile hover background color */
+        }
+
+        .note-tile a:hover {
+            color: #4CAF50;
+        }
+
+        .pdf-container {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 1000px;
+            overflow: auto;
+            display: none;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+
+        @media (max-width: 600px) {
+            .navbar a {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .note-tile a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clouds"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand title" href="#">Sanitary Inspector Notes</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="showHome()">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showNotes()">NOTES</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="home-content">
+        <div class="container mx-auto py-10">
+            <h1 class="text-4xl font-bold text-center text-white mb-6">Welcome to Sanitary Inspector Diploma Notes</h1>
+            <p class="text-lg text-center text-white">site is under development</p>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-10">
+            <div class="notes">
+                <div class="note-tile rounded-lg shadow-lg text-center">
+                    <a href="book1.pdf" class="text-lg font-semibold text-white" onclick="loadPDF('book1.pdf')">BOOK 1</a>
+                    <div class="pdf-container">
+                        <embed src="book1.pdf" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+                <div class="note-tile rounded-lg shadow-lg text-center">
+                    <a href="book2.pdf" class="text-lg font-semibold text-white" onclick="loadPDF('book2.pdf')">BOOK 2</a>
+                    <div class="pdf-container">
+                        <embed src="book2.pdf" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+                <div class="note-tile rounded-lg shadow-lg text-center">
+                    <a href="book3.pdf" class="text-lg font-semibold text-white" onclick="loadPDF('book3.pdf')">BOOK 3</a>
+                    <div class="pdf-container">
+                        <embed src="book3.pdf" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+                <div class="note-tile rounded-lg shadow-lg text-center">
+                    <a href="book4.pdf" class="text-lg font-semibold text-white" onclick="loadPDF('book4.pdf')">BOOK 4</a>
+                    <div class="pdf-container">
+                        <embed src="book4.pdf" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+                <div class="note-tile rounded-lg shadow-lg text-center">
+                    <a href="book5.pdf" class="text-lg font-semibold text-white" onclick="loadPDF('book5.pdf')">BOOK 5</a>
+                    <div class="pdf-container">
+                        <embed src="book5.pdf" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            function showHome() {
+                document.querySelector('.home-content').style.display = 'block';
+                document.querySelector('.notes').style.display = 'none';
+            }
+
+            function showNotes() {
+                document.querySelector('.home-content').style.display = 'none';
+                document.querySelector('.notes').style.display = 'grid';
+            }
+
+            function loadPDF(url) {
+                const pdfContainers = document.querySelectorAll('.pdf-container');
+                pdfContainers.forEach(container => {
+                    container.style.display = 'none';
+                });
+                const targetContainer = document.querySelector(`#${url.replace('.pdf', '')}-container`);
+                targetContainer.style.display = 'block';
+            }
+
+            // Initially show home content
+            showHome();
+
+            // Disable right-click
+            document.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+
+            // Disable text selection and copying
+            document.addEventListener('selectstart', function(event) {
+                event.preventDefault();
+            });
+
+            document.addEventListener('copy', function(event) {
+                event.preventDefault();
+            });
+        </script>
+
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+    </html>
+
