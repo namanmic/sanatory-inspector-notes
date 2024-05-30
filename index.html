@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@NAMANMIC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #092635, #1B4242);
+      color: #9EC8B9;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .glass {
+      background: rgba(92, 131, 116, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(92, 131, 116, 0.3);
+      color: #9EC8B9;
+    }
+    .writing-animation {
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+      border-right: .15em solid #5C8374;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #5C8374; }
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .navbar, .nav-link {
+      color: #9EC8B9 !important;
+    }
+    .nav-link:hover {
+      color: yellow !important; /* Changed color on hover to yellow */
+    }
+    a.navbar-brand {
+      color: #9EC8B9 !important;
+    }
+    a.navbar-brand:hover {
+      color: yellow !important;
+    }
+    a.glass {
+      background: rgba(158, 200, 185, 0.2);
+      color: #9EC8B9;
+      transition: background 0.3s, color 0.3s;
+    }
+    a.glass:hover {
+      background: rgba(158, 200, 185, 0.4);
+      color: #1B4242;
+    }
+    .content-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .content-col {
+      flex: 1;
+      min-width: 300px;
+    }
+    /* Custom 3D Look Animation */
+    .rainbow-text {
+      background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+      background-size: 600% 100%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow-flow 10s linear infinite;
+      text-shadow: 0 0 5px rgba(158, 200, 185, 0.5);
+    }
+    @keyframes rainbow-flow {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
+    /* Styling for Previous Paper */
+    .previous-paper-heading {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .previous-paper-heading::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #92a8d1, #034f84);
+      top: 0;
+      left: 0;
+      z-index: -1;
+      animation: wave 2s infinite;
+    }
+    @keyframes wave {
+      0% {
+        transform: skewY(-5deg);
+      }
+      50% {
+        transform: skewY(5deg);
+      }
+      100% {
+        transform: skewY(-5deg);
+      }
+    }
+    /* Footer Styling */
+    footer {
+      background-color: #1B4242;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 50px;
+      position: relative;
+    }
+    footer p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .handwritten-text {
+      font-family: 'Arial', sans-serif; /* Change to handwritten font if available */
+      font-size: 20px;
+    }
+    .instagram-logo {
+      width: 30px;
+      margin-left: 5px;
+    }
+  </style>
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', event => {
+      if (event.ctrlKey && (event.key === 'c' || event.key === 'u')) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light glass">
+    <div class="container-fluid">
+      <a class="navbar-brand rainbow-text" href="#">@NAMANMIC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#notes">Notes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#previous-paper">Previous Paper</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div id="home" class="glass mb-5 p-5 text-center">
+      <h1 class="writing-animation">Thanks me later</h1>
+    </div>
+
+    <div class="content-row">
+      <div id="notes" class="glass mb-5 p-5 content-col">
+        <h2 class="mb-4">Notes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="https://drive.google.com/file/d/1RLxbwCT95FUkg7wERUZ8yj_wD5yOgStq/preview" class="glass p-3" target="pdf-viewer">Book1</a>
+          <a href="https://drive.google.com/file/d/1Ny03fefDlECP7MNC-keG1wiZhZgosevI/preview" class="glass p-3" target="pdf-viewer">Book2</a>
+          <a href="https://drive.google.com/file/d/1BllrwVTLE_HE6GKlYWFEquFmvUuDgBKY/preview" class="glass p-3" target="pdf-viewer">Book3</a>
+          <a href="https://drive.google.com/file/d/1DDzYAlBKJJR_xd2YSc5u9wg_sROi0M-Q/preview" class="glass p-3" target="pdf-viewer">Book4</a>
+          <a href="https://drive.google.com/file/d/1qYL_m8XdURXuYJcmhVvsieiwk0KxWyog/preview" class="glass p-3" target="pdf-viewer">Book5</a>
+        </div>
+      </div>
+
+      <div id="pdf-viewer" class="glass p-5 content-col">
+        <iframe name="pdf-viewer"></iframe>
+      </div>
+    </div>
+
+    <div id="previous-paper" class="glass mb-5 p-5">
+      <h2 class="previous-paper-heading">Previous Paper</h2>
+      <iframe src="https://drive.google.com/file/d/14Nr3kVFFjaiDdQLD_-5QT-xdujgRQ-2-/preview"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass p-5 mt-5">
+    
+      <a href="https://www.instagram.com/namanmic/" target="_blank" style="display: flex; align-items: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram" class="instagram-logo">
+        <span class="handwritten-text" style="margin-left: 5px;">Designed by @Naman Kumar Sonker</span>
+      </a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
