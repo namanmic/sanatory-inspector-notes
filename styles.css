@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #984998, #343bb9);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.namanmic {
+  font-weight: bold;
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header ul li {
+  margin: 0;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #e6f609;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+header ul li a:hover {
+  color: #00FFFF;
+  background-color: #000;
+  transform: scale(1.1);
+}
+
+.glass {
+  background-color: rgba(225, 225, 225, 0.1);
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nglass {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  background-color: rgba(225, 93, 16, 0.1);
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s;
+  cursor: pointer;
+  width: 200px;
+}
+
+.nglass:hover {
+  background-color: rgba(225, 93, 16, 0.3);
+  color: aqua;
+  transform: scale(1.05);
+}
+
+.fglass {
+  background-color: rgba(225, 93, 16, 0.1);
+  text-align: center;
+  width: 100%;
+  height: 70vh;
+  border: 5px solid rgba(1, 18, 49, 0.5);
+  border-radius: 10px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.align {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.notes-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  display: none;
+  padding: 60px;
+}
+
+.active {
+  display: block;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.design-by {
+  font-size: 1.2em;
+  font-weight: bold;
+  animation: rainbow-text 5s infinite;
+}
+
+@keyframes rainbow-text {
+  0% { color: rgb(112, 202, 172); }
+  1% { color: rgb(255, 0, 0); }   /* red */
+  2% { color: rgb(255, 69, 0); }  /* orange-red */
+  3% { color: rgb(255, 140, 0); } /* dark orange */
+  4% { color: rgb(255, 215, 0); } /* gold */
+  5% { color: rgb(255, 255, 0); } /* yellow */
+  6% { color: rgb(173, 255, 47); }/* green-yellow */
+  7% { color: rgb(0, 255, 0); }   /* lime */
+  8% { color: rgb(50, 205, 50); } /* lime green */
+  9% { color: rgb(0, 128, 0); }   /* green */
+  10% { color: rgb(0, 255, 255); }/* cyan */
+  11% { color: rgb(64, 224, 208); }/* turquoise */
+  12% { color: rgb(0, 206, 209); }/* dark turquoise */
+  13% { color: rgb(72, 209, 204); }/* medium turquoise */
+  14% { color: rgb(0, 191, 255); }/* deep sky blue */
+  15% { color: rgb(30, 144, 255); }/* dodger blue */
+  16% { color: rgb(0, 0, 255); }  /* blue */
+  17% { color: rgb(138, 43, 226); }/* blue violet */
+  18% { color: rgb(75, 0, 130); } /* indigo */
+  19% { color: rgb(238, 130, 238); }/* violet */
+  20% { color: rgb(221, 160, 221); }/* plum */
+  21% { color: rgb(255, 20, 147); }/* deep pink */
+  22% { color: rgb(255, 105, 180); }/* hot pink */
+  23% { color: rgb(255, 182, 193); }/* light pink */
+  24% { color: rgb(255, 192, 203); }/* pink */
+  25% { color: rgb(255, 222, 173); }/* navajo white */
+  26% { color: rgb(255, 239, 213); }/* papaya whip */
+  27% { color: rgb(255, 245, 238); }/* seashell */
+  28% { color: rgb(255, 228, 196); }/* bisque */
+  29% { color: rgb(255, 228, 181); }/* moccasin */
+  30% { color: rgb(255, 218, 185); }/* peach puff */
+  31% { color: rgb(255, 235, 205); }/* blanched almond */
+  32% { color: rgb(255, 250, 205); }/* lemon chiffon */
+  33% { color: rgb(255, 255, 240); }/* ivory */
+  34% { color: rgb(250, 250, 210); }/* light goldenrod yellow */
+  35% { color: rgb(255, 239, 213); }/* papaya whip */
+  36% { color: rgb(255, 228, 225); }/* misty rose */
+  37% { color: rgb(240, 255, 240); }/* honeydew */
+  38% { color: rgb(255, 240, 245); }/* lavender blush */
+  39% { color: rgb(230, 230, 250); }/* lavender */
+  40% { color: rgb(240, 248, 255); }/* alice blue */
+  41% { color: rgb(245, 245, 245); }/* white smoke */
+  42% { color: rgb(255, 250, 250); }/* snow */
+  43% { color: rgb(255, 255, 255); }/* white */
+  44% { color: rgb(240, 255, 255); }/* azure */
+  45% { color: rgb(240, 248, 255); }/* alice blue */
+  46% { color: rgb(248, 248, 255); }/* ghost white */
+  47% { color: rgb(245, 255, 250); }/* mint cream */
+  48% { color: rgb(240, 255, 240); }/* honeydew */
+  49% { color: rgb(255, 245, 238); }/* seashell */
+  50% { color: rgb(255, 228, 196); }/* bisque */
+  51% { color: rgb(255, 218, 185); }/* peach puff */
+  52% { color: rgb(255, 228, 181); }/* moccasin */
+  53% { color: rgb(255, 222, 173); }/* navajo white */
+  54% { color: rgb(255, 218, 165); }/* beige */
+  55% { color: rgb(255, 228, 181); }/* moccasin */
+  56% { color: rgb(255, 235, 205); }/* blanched almond */
+  57% { color: rgb(255, 250, 205); }/* lemon chiffon */
+  58% { color: rgb(255, 255, 240); }/* ivory */
+  59% { color: rgb(250, 250, 210); }/* light goldenrod yellow */
+  60% { color: rgb(255, 255, 224); }/* light yellow */
+  61% { color: rgb(240, 255, 240); }/* honeydew */
+  62% { color: rgb(245, 255, 250); }/* mint cream */
+  63% { color: rgb(240, 248, 255); }/* alice blue */
+  64% { color: rgb(248, 248, 255); }/* ghost white */
+  65% { color: rgb(245, 245, 245); }/* white smoke */
+  66% { color: rgb(255, 250, 250); }/* snow */
+  67% { color: rgb(255, 255, 255); }/* white */
+  68% { color: rgb(230, 230, 250); }/* lavender */
+  69% { color: rgb(240, 255, 255); }/* azure */
+  70% { color: rgb(248, 248, 255); }/* ghost white */
+  71% { color: rgb(245, 255, 250); }/* mint cream */
+  72% { color: rgb(240, 255, 240); }/* honeydew */
+  73% { color: rgb(255, 245, 238); }/* seashell */
+  74% { color: rgb(255, 228, 196); }/* bisque */
+  75% { color: rgb(255, 218, 185); }/* peach puff */
+  76% { color: rgb(255, 228, 181); }/* moccasin */
+  77% { color: rgb(255, 222, 173); }/* navajo white */
+  78% { color: rgb(255, 218, 165); }/* beige */
+  79% { color: rgb(255, 228, 181); }/* moccasin */
+  80% { color: rgb(255, 235, 205); }/* blanched almond */
+  81% { color: rgb(255, 250, 205); }/* lemon chiffon */
+  82% { color: rgb(255, 255, 240); }/* ivory */
+  83% { color: rgb(250, 250, 210); }/* light goldenrod yellow */
+  84% { color: rgb(255, 255, 224); }/* light yellow */
+  85% { color: rgb(240, 255, 240); }/* honeydew */
+  86% { color: rgb(245, 255, 250); }/* mint cream */
+  87% { color: rgb(240, 248, 255); }/* alice blue */
+  88% { color: rgb(248, 248, 255); }/* ghost white */
+  89% { color: rgb(245, 245, 245); }/* white smoke */
+  90% { color: rgb(255, 250, 250); }/* snow */
+  91% { color: rgb(255, 255, 255); }/* white */
+  92% { color: rgb(230, 230, 250); }/* lavender */
+  93% { color: rgb(240, 255, 255); }/* azure */
+  94% { color: rgb(248, 248, 255); }/* ghost white */
+  95% { color: rgb(245, 255, 250); }/* mint cream */
+  96% { color: rgb(240, 255, 240); }/* honeydew */
+  97% { color: rgb(255, 245, 238); }/* seashell */
+  98% { color: rgb(255, 228, 196); }/* bisque */
+  99% { color: rgb(255, 218, 185); }/* peach puff */
+  100% { color: rgb(199, 122, 122); } /* final color */
+}
+
+
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px) {
+  .align {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  header ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .namanmic {
+    font-size: 1.5em;
+  }
+
+  .glass {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .nglass {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .fglass {
+    height: 50vh;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}
+
+/* p > strong {
+
+  display:inline-flex;
+  justify-content: space-between;
+  padding:1em;
+} */
+
+.logo  {
+  display: inline-flex;
+}
+img {
+  
+  position: relative;
+  bottom: 10px;
+ 
+  width:3em;
+  height:3em;
+}
+
+.hr {
+  background-color: (225,225,225,0.2); 
+  height:5px;
+}
